@@ -1,0 +1,78 @@
+set STUDENTS := 
+Alice
+Bob
+Carol
+David
+Eve
+Frank
+;
+
+set PROJECTS := 
+P1 
+P2 
+P3 
+P4
+;
+
+set SKILLS := 
+Python 
+ML 
+Writing 
+Design 
+Java 
+Research 
+WebDev 
+SystemsDesign
+;
+
+param preference:
+           P1  P2  P3  P4 :=
+Alice      10   5   7   2
+Bob         4   6  10   3
+Carol       7  10   5   2
+David      10   3   4   8
+Eve         5  10   4   6
+Frank       3   4   5  10
+;
+
+param min_cap := 
+P1 1 
+P2 2 
+P3 2 
+P4 1
+;
+
+param max_cap := 
+P1 2 
+P2 3 
+P3 2 
+P4 3
+;
+
+param student_skills:
+           Python ML Writing Design Java Research WebDev  SystemsDesign :=
+Alice      1      1  1       1      1    1        1       1
+Bob        1      1  1       1      1    1        1       1
+Carol      1      1  1       1      1    1        1       1
+David      1      1  1       1      1    1        1       1
+Eve        1      1  1       1      1    1        1       1
+Frank      1      1  1       1      1    1        1       1
+;
+
+param project_requirements:
+           Python ML Writing Design Java Research WebDev  SystemsDesign :=
+P1         1      1  0       0      0    0        0       0
+P2         0      0  0       0      1    1        0       0
+P3         0      0  1       1      0    0        0       0
+P4         0      0  0       0      0    0        1       1
+;
+
+param individual := 
+Alice 1
+;
+
+param available:
+           P1  P2  P3  P4 :=
+David      1   0   0   1
+;
+
