@@ -104,9 +104,9 @@ Let $x_{ij}$ be a binary variable:
 
 ### Objective Function
 Maximize the total preference score:
-\[
+$$
 \text{Maximize } \sum_{i \in \text{Students}} \sum_{j \in \text{Projects}} P_{ij} \cdot x_{ij}
-\]
+$$
 
 ### Constraints
 1. **Assignment**:
