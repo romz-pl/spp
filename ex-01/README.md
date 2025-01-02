@@ -1,6 +1,6 @@
 ## Students
 
-| **Student** | **Skills**              | **Preferences**          | **Constraints**                   |
+| **Student** | **Skills**              | **Preferences**          | **Constraints**                    |
 |-------------|-------------------------|--------------------------|------------------------------------|
 | Alice       | Python, Machine Learning| P1 > P3 > P2 > P4        | Prefers individual project         |
 | Bob         | Writing, UX Design      | P3 > P2 > P4 > P1        | None                               |
