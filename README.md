@@ -134,13 +134,6 @@ x_{ij} = 0 \quad \forall i \in \text{Students (preferring individual)}, \forall 
 x_{i_1j} = x_{i_2j} \quad \forall j \in \text{Projects}, \text{ if } i_1 \text{ and } i_2 \text{ must work together.}
 \]
 
----
-
-## Implementation
-
-- **Gurobi**: [View Gurobi Implementation](#)
-- **AMPL**: [View AMPL Model](#)
-- **Python (PuLP)**: [View Python Implementation](#)
 
 ---
 
