@@ -16,7 +16,7 @@
 |-------------|-----------------------------|--------------|--------------|
 | P1          | Python, Machine Learning    | 1-2 students | High         |
 | P2          | Java, Data Analysis         | 2-3 students | Medium       |
-| P3          | Writing, UX Design          | 2 students   | Low          |
+| P3          | Writing, UX Design          | 1-2 students | Low          |
 | P4          | Systems Design, Web Dev     | 1-3 students | High         |
 
 

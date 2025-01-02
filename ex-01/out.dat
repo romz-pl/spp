@@ -1,0 +1,95 @@
+set STUDENTS := Alice Bob Carol David Eve Frank;
+
+set PROJECTS := P1 P2 P3 P4;
+
+set SKILLS :=
+Python          Writing         Java            WebDev
+ML              Design          Research        SystemsDesign;
+
+preference [*,*]
+:       P1   P2   P3   P4    :=
+Alice   10    5    7    2
+Bob      4    6   10    3
+Carol    7   10    5    2
+David   10    3    4    8
+Eve      5   10    4    6
+Frank    3    4    5   10
+;
+
+min_cap [*] :=
+P1  1
+P2  2
+P3  1
+P4  1
+;
+
+max_cap [*] :=
+P1  2
+P2  3
+P3  2
+P4  3
+;
+
+student_skills [*,*] (tr)
+:             Alice Bob Carol David Eve Frank    :=
+Design           0    1    0     0    0    0
+Java             0    0    1     0    0    0
+ML               1    0    0     0    0    0
+Python           1    0    0     1    0    0
+Research         0    0    1     0    0    0
+SystemsDesign    0    0    0     0    0    1
+WebDev           0    0    0     1    0    0
+Writing          0    1    0     0    1    0
+;
+
+project_requirements [*,*] (tr)
+:              P1  P2  P3  P4    :=
+Design          0   0   1   0
+Java            0   1   0   0
+ML              1   0   0   0
+Python          1   0   0   0
+Research        0   1   0   0
+SystemsDesign   0   0   0   1
+WebDev          0   0   0   1
+Writing         0   0   1   0
+;
+
+individual [*] :=
+Alice  1
+;
+
+available :=
+David P1   1
+David P2   0
+David P3   0
+David P4   1
+;
+
+
+Presolve eliminates 22 constraints and 24 variables.
+Adjusted problem:
+0 variables;
+0 constraints
+1 linear objective; 0 nonzeros.
+
+Solution determined by presolve;
+objective TotalPreference = 58.
+solve_result = solved
+
+solve_result_num = 99
+
+_total_solve_elapsed_time = 0
+
+_total_solve_time = 0
+
+TotalPreference = 5.8000000E+01
+
+x [*,*]
+:      P1  P2  P3  P4    :=
+Alice   1   0   0   0
+Bob     0   0   1   0
+Carol   0   1   0   0
+David   0   0   0   1
+Eve     0   1   0   0
+Frank   0   0   0   1
+;

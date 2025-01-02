@@ -37,8 +37,8 @@ Frank       3   4   5  10
 
 param min_cap := 
 P1 1 
-P2 2 
-P3 2 
+P2 2
+P3 1
 P4 1
 ;
 
@@ -50,13 +50,13 @@ P4 3
 ;
 
 param student_skills:
-           Python ML Writing Design Java Research WebDev  SystemsDesign :=
-Alice      1      1  1       1      1    1        1       1
-Bob        1      1  1       1      1    1        1       1
-Carol      1      1  1       1      1    1        1       1
-David      1      1  1       1      1    1        1       1
-Eve        1      1  1       1      1    1        1       1
-Frank      1      1  1       1      1    1        1       1
+           Python ML Writing Design Java Research WebDev SystemsDesign :=
+Alice      1      1  0       0      0    0        0       0
+Bob        0      0  1       1      0    0        0       0
+Carol      0      0  0       0      1    1        0       0
+David      1      0  0       0      0    0        1       0
+Eve        0      0  1       0      0    0        0       0
+Frank      0      0  0       0      0    0        0       1
 ;
 
 param project_requirements:
