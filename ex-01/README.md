@@ -22,13 +22,13 @@
 
 ## Constraints:
 
-1. Project-Specific:
+1. **Project-Specific**:
    - P1: Must include at least one student proficient in Python.
    - P2: Must have at least one student with Java and one with Data Analysis skills.
    - P3: Requires students with Writing or UX Design skills.
    - P4: Requires a mix of technical (C++, Systems Design) and creative (Web Development) skills.
 
-2. Student-Specific:
+2. **Student-Specific**:
    - Alice prefers working solo and should not be assigned to group projects.
    - Bob and Carol must work on the same project.
    - David can only work on P1 or P4 due to scheduling conflicts.
