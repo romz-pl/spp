@@ -28,13 +28,15 @@ param individual {STUDENTS} default 0;
 # 1 if student i can be assigned to project j
 param available {STUDENTS, PROJECTS} default 1;
 
+# Students who must work together
+set must_work_together within STUDENTS cross STUDENTS;
+
 # Decision Variables: 1 if student i is assigned to project j
 var x {STUDENTS, PROJECTS} binary;
 
 # Objective: Maximize total preference score
 maximize TotalPreference:
     sum {i in STUDENTS, j in PROJECTS} preference[i, j] * x[i, j];
-
 
 # Each student can be assigned to at most one project
 subject to AssignOnce {i in STUDENTS}:
@@ -58,3 +60,8 @@ subject to IndividualPref {i in STUDENTS, j in PROJECTS: individual[i] = 1 and m
 # Availability constraints
 subject to Availability {i in STUDENTS, j in PROJECTS: available[i, j] = 0}:
     x[i, j] = 0;
+
+
+# Students who must work together
+subject to Pairing {(s1, s2) in must_work_together, p in PROJECTS}:
+    x[s1, p] = x[s2, p];

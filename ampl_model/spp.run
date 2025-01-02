@@ -9,8 +9,9 @@ display student_skills;
 display project_requirements;
 display individual;
 display available;
+display must_work_together;
 
-expand IndividualPref;
+# expand IndividualPref;
 
 solve;
 
