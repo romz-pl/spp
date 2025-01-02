@@ -1,0 +1,177 @@
+
+
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 15086248
+   Password : GzpYCPnk
+   User     :
+   Solver   : milp:HiGHS:AMPL
+   Start    : 2025-01-02 14:46:31
+   End      : 2025-01-02 14:46:34
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver highsampl.
+Checking ampl.mod for highsampl_options...
+Checking ampl.com for highsampl_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-6.neos-server.org
+set STUDENTS :=
+Alice   Carol   Eve     Grace   Irene   Karen
+Bob     David   Frank   Henry   Jack    Leo;
+
+set PROJECTS := Project1 Project2 Project3 Project4 Project5 Project6;
+
+set SKILLS := SkillA SkillB SkillC;
+
+preference [*,*]
+:     Project1 Project2 Project3 Project4 Project5 Project6    :=
+Alice     8        6        7        5        9        6
+Bob       7        9        6        4        8        7
+Carol     6        5        8        7        6        5
+David     5        7        6        8        7        6
+Eve       9        8        5        6        5        8
+Frank     4        6        7        9        6        7
+Grace     7        8        6        5        7        9
+Henry     6        7        5        8        6        7
+Irene     5        6        7        8        9        5
+Jack      8        7        6        5        4        9
+Karen     7        5        8        6        7        6
+Leo       6        8        7        5        6        8
+;
+
+min_cap [*] :=
+Project1  2
+Project2  2
+Project3  2
+Project4  2
+Project5  2
+Project6  2
+;
+
+max_cap [*] :=
+Project1  4
+Project2  4
+Project3  4
+Project4  4
+Project5  4
+Project6  4
+;
+
+student_skills [*,*]
+:     SkillA SkillB SkillC    :=
+Alice    1      0      1
+Bob      0      1      1
+Carol    1      1      0
+David    0      1      1
+Eve      1      0      1
+Frank    1      1      0
+Grace    0      1      1
+Henry    1      1      0
+Irene    0      1      1
+Jack     1      0      1
+Karen    0      1      1
+Leo      1      1      0
+;
+
+project_requirements :=
+Project1 SkillA   1
+Project1 SkillB   0
+Project1 SkillC   1
+Project2 SkillA   0
+Project2 SkillB   1
+Project2 SkillC   1
+Project3 SkillA   1
+Project3 SkillB   1
+Project3 SkillC   0
+Project4 SkillA   1
+Project4 SkillB   0
+Project4 SkillC   1
+Project5 SkillA   0
+Project5 SkillB   1
+Project5 SkillC   1
+Project6 SkillA   1
+Project6 SkillB   1
+Project6 SkillC   0
+;
+
+individual [*] :=
+Alice  0
+  Bob  0
+Carol  0
+David  0
+  Eve  0
+Frank  0
+Grace  0
+Henry  0
+Irene  0
+ Jack  0
+Karen  0
+  Leo  0
+;
+
+available [*,*]
+:     Project1 Project2 Project3 Project4 Project5 Project6    :=
+Alice     1        1        1        1        1        1
+Bob       1        1        1        1        1        1
+Carol     1        1        1        1        1        1
+David     1        1        1        1        1        1
+Eve       1        1        1        1        1        1
+Frank     1        1        1        1        1        1
+Grace     1        1        1        1        1        1
+Henry     1        1        1        1        1        1
+Irene     1        1        1        1        1        1
+Jack      1        1        1        1        1        1
+Karen     1        1        1        1        1        1
+Leo       1        1        1        1        1        1
+;
+
+set must_work_together := (Alice,Bob) (Carol,David) (Eve,Frank);
+
+
+72 variables, all binary
+54 constraints, all linear; 348 nonzeros
+        18 equality constraints
+        36 inequality constraints
+1 linear objective; 72 nonzeros.
+
+HiGHS 1.7.0: HiGHS 1.7.0: optimal solution; objective 93
+31 simplex iterations
+1 branching nodes
+solve_result = solved
+
+solve_result_num = 0
+
+_total_solve_elapsed_time = 0.011463
+
+_total_solve_time = 0.204379
+
+TotalPreference = 9.3000000E+01
+
+x [*,*]
+:     Project1 Project2 Project3 Project4 Project5 Project6    :=
+Alice     0        0        0        0        1        0
+Bob       0        0        0        0        1        0
+Carol     0        0        1        0        0        0
+David     0        0        1        0        0        0
+Eve       0        0        0        0        0        1
+Frank     0        0        0        0        0        1
+Grace     0        1        0        0        0        0
+Henry     0        0        0        1        0        0
+Irene     0        0        0        1        0        0
+Jack      1        0        0        0        0        0
+Karen     1        0        0        0        0        0
+Leo       0        1        0        0        0        0
+;
+

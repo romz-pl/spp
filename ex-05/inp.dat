@@ -1,0 +1,96 @@
+# Define sets
+set STUDENTS := Alice Bob Carol David Eve Frank Grace Henry Irene Jack Karen Leo;
+set PROJECTS := Project1 Project2 Project3 Project4 Project5 Project6;
+set SKILLS := SkillA SkillB SkillC;
+
+# Preference scores: preference[student, project]
+param preference : Project1 Project2 Project3 Project4 Project5 Project6 :=
+    Alice  8  6  7  5  9  6
+    Bob    7  9  6  4  8  7
+    Carol  6  5  8  7  6  5
+    David  5  7  6  8  7  6
+    Eve    9  8  5  6  5  8
+    Frank  4  6  7  9  6  7
+    Grace  7  8  6  5  7  9
+    Henry  6  7  5  8  6  7
+    Irene  5  6  7  8  9  5
+    Jack   8  7  6  5  4  9
+    Karen  7  5  8  6  7  6
+    Leo    6  8  7  5  6  8;
+
+# Minimum and maximum capacities for each project
+param min_cap :=
+    Project1 2
+    Project2 2
+    Project3 2
+    Project4 2
+    Project5 2
+    Project6 2;
+
+param max_cap :=
+    Project1 4
+    Project2 4
+    Project3 4
+    Project4 4
+    Project5 4
+    Project6 4;
+
+# Student skills: student_skills[student, skill]
+param student_skills : SkillA SkillB SkillC :=
+    Alice  1  0  1
+    Bob    0  1  1
+    Carol  1  1  0
+    David  0  1  1
+    Eve    1  0  1
+    Frank  1  1  0
+    Grace  0  1  1
+    Henry  1  1  0
+    Irene  0  1  1
+    Jack   1  0  1
+    Karen  0  1  1
+    Leo    1  1  0;
+
+# Project requirements: project_requirements[project, skill]
+param project_requirements : SkillA SkillB SkillC :=
+    Project1  1  0  1
+    Project2  0  1  1
+    Project3  1  1  0
+    Project4  1  0  1
+    Project5  0  1  1
+    Project6  1  1  0;
+
+# Individual project preference: 1 if student prefers individual projects
+param individual :=
+    Alice  0
+    Bob    0
+    Carol  0
+    David  0
+    Eve    0
+    Frank  0
+    Grace  0
+    Henry  0
+    Irene  0
+    Jack   0
+    Karen  0
+    Leo    0;
+
+# Availability: 1 if student can be assigned to project
+param available : Project1 Project2 Project3 Project4 Project5 Project6 :=
+    Alice  1  1  1  1  1  1
+    Bob    1  1  1  1  1  1
+    Carol  1  1  1  1  1  1
+    David  1  1  1  1  1  1
+    Eve    1  1  1  1  1  1
+    Frank  1  1  1  1  1  1
+    Grace  1  1  1  1  1  1
+    Henry  1  1  1  1  1  1
+    Irene  1  1  1  1  1  1
+    Jack   1  1  1  1  1  1
+    Karen  1  1  1  1  1  1
+    Leo    1  1  1  1  1  1;
+
+# Students who must work together
+set must_work_together :=
+    (Alice, Bob)
+    (Carol, David)
+    (Eve, Frank);
