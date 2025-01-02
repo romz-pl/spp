@@ -98,9 +98,9 @@ Each student-project pair has a **preference score**, representing how much a st
 ## Mathematical Formulation
 
 ### Decision Variables
-Let \( x_{ij} \) be a binary variable:
-- \( x_{ij} = 1 \) if student \( i \) is assigned to project \( j \).
-- \( x_{ij} = 0 \) otherwise.
+Let $ x_{ij} $ be a binary variable:
+- $ x_{ij} = 1 $ if student $ i $ is assigned to project $ j $.
+- $ x_{ij} = 0 $ otherwise.
 
 ### Objective Function
 Maximize the total preference score:
