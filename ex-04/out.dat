@@ -1,0 +1,147 @@
+
+
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 15086225
+   Password : jMLEzGJY
+   User     :
+   Solver   : milp:HiGHS:AMPL
+   Start    : 2025-01-02 14:25:45
+   End      : 2025-01-02 14:25:47
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver highsampl.
+Checking ampl.mod for highsampl_options...
+Checking ampl.com for highsampl_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-6.neos-server.org
+set STUDENTS := Alice Bob Carol David Eve Frank;
+
+set PROJECTS := Project1 Project2 Project3 Project4;
+
+set SKILLS := SkillA SkillB SkillC;
+
+preference [*,*]
+:     Project1 Project2 Project3 Project4    :=
+Alice     8        6        7        5
+Bob       7        9        6        4
+Carol     6        5        8        7
+David     5        7        6        8
+Eve       9        8        5        6
+Frank     4        6        7        9
+;
+
+min_cap [*] :=
+Project1  1
+Project2  1
+Project3  1
+Project4  1
+;
+
+max_cap [*] :=
+Project1  3
+Project2  3
+Project3  3
+Project4  3
+;
+
+student_skills :=
+Alice SkillA   1
+Alice SkillB   0
+Alice SkillC   1
+Bob   SkillA   0
+Bob   SkillB   1
+Bob   SkillC   1
+Carol SkillA   1
+Carol SkillB   1
+Carol SkillC   0
+David SkillA   0
+David SkillB   1
+David SkillC   1
+Eve   SkillA   1
+Eve   SkillB   0
+Eve   SkillC   1
+Frank SkillA   1
+Frank SkillB   1
+Frank SkillC   0
+;
+
+project_requirements :=
+Project1 SkillA   1
+Project1 SkillB   0
+Project1 SkillC   1
+Project2 SkillA   0
+Project2 SkillB   1
+Project2 SkillC   1
+Project3 SkillA   1
+Project3 SkillB   1
+Project3 SkillC   0
+Project4 SkillA   1
+Project4 SkillB   0
+Project4 SkillC   1
+;
+
+individual [*] :=
+Alice  0
+  Bob  0
+Carol  0
+David  0
+  Eve  0
+Frank  0
+;
+
+available [*,*]
+:     Project1 Project2 Project3 Project4    :=
+Alice     1        1        1        1
+Bob       1        1        1        1
+Carol     1        1        1        1
+David     1        1        1        1
+Eve       1        1        1        1
+Frank     1        1        1        1
+;
+
+set must_work_together := (Alice,Bob) (Carol,David);
+
+
+24 variables, all binary
+30 constraints, all linear; 120 nonzeros
+        8 equality constraints
+        22 inequality constraints
+1 linear objective; 24 nonzeros.
+
+HiGHS 1.7.0: HiGHS 1.7.0: optimal solution; objective 46
+13 simplex iterations
+1 branching nodes
+solve_result = solved
+
+solve_result_num = 0
+
+_total_solve_elapsed_time = 0.008289
+
+_total_solve_time = 0.104116
+
+TotalPreference = 4.6000000E+01
+
+x [*,*]
+:     Project1 Project2 Project3 Project4    :=
+Alice     0        1        0        0
+Bob       0        1        0        0
+Carol     0        0        0        1
+David     0        0        0        1
+Eve       1        0        0        0
+Frank     0        0        1        0
+;
+
+

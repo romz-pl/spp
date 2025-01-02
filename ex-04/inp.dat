@@ -1,0 +1,65 @@
+# Define sets
+set STUDENTS := Alice Bob Carol David Eve Frank;
+set PROJECTS := Project1 Project2 Project3 Project4;
+set SKILLS := SkillA SkillB SkillC;
+
+# Preference scores: preference[student, project]
+param preference : Project1 Project2 Project3 Project4 :=
+    Alice  8  6  7  5
+    Bob    7  9  6  4
+    Carol  6  5  8  7
+    David  5  7  6  8
+    Eve    9  8  5  6
+    Frank  4  6  7  9;
+
+# Minimum and maximum capacities for each project
+param min_cap :=
+    Project1 1
+    Project2 1
+    Project3 1
+    Project4 1;
+
+param max_cap :=
+    Project1 3
+    Project2 3
+    Project3 3
+    Project4 3;
+
+# Student skills: student_skills[student, skill]
+param student_skills : SkillA SkillB SkillC :=
+    Alice  1  0  1
+    Bob    0  1  1
+    Carol  1  1  0
+    David  0  1  1
+    Eve    1  0  1
+    Frank  1  1  0;
+
+# Project requirements: project_requirements[project, skill]
+param project_requirements : SkillA SkillB SkillC :=
+    Project1  1  0  1
+    Project2  0  1  1
+    Project3  1  1  0
+    Project4  1  0  1;
+
+# Individual project preference: 1 if student prefers individual projects
+param individual :=
+    Alice  0
+    Bob    0
+    Carol  0
+    David  0
+    Eve    0
+    Frank  0;
+
+# Availability: 1 if student can be assigned to project
+param available : Project1 Project2 Project3 Project4 :=
+    Alice  1  1  1  1
+    Bob    1  1  1  1
+    Carol  1  1  1  1
+    David  1  1  1  1
+    Eve    1  1  1  1
+    Frank  1  1  1  1;
+
+# Students who must work together
+set must_work_together :=
+    (Alice, Bob)
+    (Carol, David);
