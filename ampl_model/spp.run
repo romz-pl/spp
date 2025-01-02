@@ -1,0 +1,29 @@
+display STUDENTS;
+display PROJECTS;
+display SKILLS;
+
+display preference;
+display min_cap;
+display max_cap;
+display student_skills;
+display project_requirements;
+display individual;
+display available;
+
+# expand AssignOnce;
+
+solve;
+
+display solve_result;
+display solve_result_num;
+display _total_solve_elapsed_time;
+display _total_solve_time;
+
+
+if solve_result = "solved" then
+{ 
+   printf "TotalPreference = %.7E\n\n", TotalPreference;
+
+   display x;
+}
+
