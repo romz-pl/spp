@@ -55,6 +55,6 @@ subject to SkillMatch {j in PROJECTS, k in SKILLS: project_requirements[j, k] = 
 subject to IndividualPref {i in STUDENTS, j in PROJECTS: individual[i] = 1 and min_cap[j] > 1}:
     x[i, j] = 0;
 
-# # Availability constraints
-# subject to Availability {i in STUDENTS, j in PROJECTS: available[i, j] = 0}:
-#     x[i, j] = 0;
+# Availability constraints
+subject to Availability {i in STUDENTS, j in PROJECTS: available[i, j] = 0}:
+    x[i, j] = 0;
