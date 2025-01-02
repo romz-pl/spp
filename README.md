@@ -65,7 +65,7 @@ Let $x_{ij}$ be a binary variable:
 ### Objective Function
 Maximize the total preference score:
 ```math
-\text{Maximize } \sum_{i \in \text{Students}} \sum_{j \in \text{Projects}} P_{ij} x_{ij}
+\text{max } \sum_{i \in \text{Students}} \sum_{j \in \text{Projects}} P_{ij} x_{ij}
 ```
 
 ### Constraints
@@ -81,22 +81,30 @@ Maximize the total preference score:
 
 3. **Skill Matching.** For each project $j$, the required skills $R_{jk}$​ must be covered by at least one assigned student:
 ```math
-\sum_{i \in \text{Students}} S_{ik} x_{ij} \geq R_{jk} \quad \forall j \in \text{Projects}, \forall k \in \text{Skills}
+\sum_{i \in \text{Students}} S_{ik} x_{ij} \geq R_{jk} \qquad \forall j \in \text{Projects}, \quad \forall k \in \text{Skills}
 ```
 
 4. **Individual project preference constraints.** Students who prefer individual projects can only be assigned to single-capacity projects:
 ```math
-x_{ij} = 0 \quad \forall i \in \text{Students (preferring individual)}, \forall j \in \text{Group Projects}
+x_{ij} = 0 \qquad \forall i \in \text{Students (preferring individual)}, \quad \forall j \in \text{Group Projects}
 ```
 
 5. **Pairing constraints.** If students $i_1$​ and $i_2$​ must work together, they should be assigned to the same project:
 ```math
-x_{i_1 j} = x_{i_2 j} \quad \forall j \in \text{Projects}, \text{ if } i_1 \text{ and } i_2 \text{ must work together.}
+x_{i_1 j} = x_{i_2 j} \qquad \forall j \in \text{Projects}, \quad \text{ if } i_1 \text{ and } i_2 \text{ must work together.}
 ```
 
 6. **Availability constraints.** If a student $i$ is only available for certain projects $j$, enforce:
 ```math
 x_{ij} = 0 \quad \forall j \notin \text{Available Projects for } i
+```
+
+7. **Project-Specific Constraints.** For projects requiring diverse teams (e.g., technical and creative), enforce the presence of at least one student from each required category:
+```math
+    \sum_{i \in \text{Technical Students}} x_{i j} \geq 1 \qquad \forall j  \in \text{Diverse Projects}
+```
+```math
+\sum_{i \in \text{Creative Students}} x_{i j} \geq 1 \qquad \forall j  \in \text{Diverse Projects}
 ```
 
 
