@@ -10,7 +10,7 @@ display project_requirements;
 display individual;
 display available;
 
-# expand AssignOnce;
+expand IndividualPref;
 
 solve;
 

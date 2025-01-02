@@ -1,3 +1,32 @@
+
+
+*************************************************************
+
+   NEOS Server Version 6.0
+   Job#     : 15086091
+   Password : zKlOWIDg
+   User     :
+   Solver   : milp:HiGHS:AMPL
+   Start    : 2025-01-02 12:53:16
+   End      : 2025-01-02 12:53:26
+   Host     : prod-sub-1.neos-server.org
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information for any particular purpose.
+
+   Announcements:
+*************************************************************
+You are using the solver highsampl.
+Checking ampl.mod for highsampl_options...
+Checking ampl.com for highsampl_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-6.neos-server.org
 set STUDENTS := Alice Bob Carol David Eve Frank;
 
 set PROJECTS := P1 P2 P3 P4;
@@ -65,8 +94,11 @@ David P3   0
 David P4   1
 ;
 
+subject to IndividualPref['Alice','P2']:
+        x['Alice','P2'] = 0;
 
-Presolve eliminates 22 constraints and 24 variables.
+
+Presolve eliminates 23 constraints and 24 variables.
 Adjusted problem:
 0 variables;
 0 constraints
@@ -93,3 +125,5 @@ David   0   0   0   1
 Eve     0   1   0   0
 Frank   0   0   0   1
 ;
+
+NEOS Server Home

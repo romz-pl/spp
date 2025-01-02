@@ -51,9 +51,9 @@ subject to ProjectMaxCap {j in PROJECTS}:
 subject to SkillMatch {j in PROJECTS, k in SKILLS: project_requirements[j, k] = 1}:
     sum {i in STUDENTS: student_skills[i, k] = 1} x[i, j] >= 1;
 
-# # Individual project preference
-# subject to IndividualPref {i in STUDENTS, j in PROJECTS: individual[i] = 1 and max_cap[j] > 1}:
-#     x[i, j] = 0;
+# Individual project preference
+subject to IndividualPref {i in STUDENTS, j in PROJECTS: individual[i] = 1 and min_cap[j] > 1}:
+    x[i, j] = 0;
 
 # # Availability constraints
 # subject to Availability {i in STUDENTS, j in PROJECTS: available[i, j] = 0}:
