@@ -41,12 +41,12 @@
 |-------------|----------------------|
 | Alice       | P1                   |
 | Bob         | P3                   |
-| Carol       | P3                   |
+| Carol       | P2                   |
 | David       | P4                   |
 | Eve         | P2                   |
 | Frank       | P4                   |
 
-### **Total Preference Score**: 48
+### **Total Preference Score**: 58
 
 
 
