@@ -109,7 +109,6 @@ x_{ij} = 0 \quad \forall j \notin \text{Available Projects for } i
 
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## References
++ D.M. Gay, B.W. Kernighan [AMPL: A Modeling Language for Mathematical Programming](https://ampl.com/wp-content/uploads/BOOK.pdf), 2003
 
