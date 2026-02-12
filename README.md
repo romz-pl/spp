@@ -1,6 +1,7 @@
 # Student Project Pairing Problem
 
-The **Student Project Pairing Problem** involves assigning students to projects in a way that maximizes overall satisfaction, respects skill requirements, adheres to project capacities, and satisfies specific constraints. It is a combinatorial optimization problem commonly encountered in educational settings or team-based project environments.
+> [!NOTE]
+> The **Student Project Pairing Problem** involves assigning students to projects in a way that maximizes overall satisfaction, respects skill requirements, adheres to project capacities, and satisfies specific constraints. It is a combinatorial optimization problem commonly encountered in educational settings or team-based project environments.
 
 ## Problem Description
 
